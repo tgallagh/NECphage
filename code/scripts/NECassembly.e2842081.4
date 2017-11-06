@@ -1,0 +1,74 @@
+
+Perl 5 is a feature-rich, interpreted programming language good
+for sysadmin tasks and especially regular expression operations.
+
+If you need to add modules via cpan or manually, be sure to:
+	module load gcc/5.3.0
+first. (Not required to use, only to install more modules)
+This perl is new (10.19.2017). If it's missing modules, please let us know.
+
+[a5] Found the following libraries:
+     raw1:
+      id=raw1
+      p1=/bio/tgallagh/NECphage/data/processed/filteredreads/PA14_NEC_27-49_phage.paired.derep.read1.fastq.fastq
+      p2=/bio/tgallagh/NECphage/data/processed/filteredreads/PA14_NEC_27-49_phage.paired.derep.read2.fastq.fastq
+[a5] Cleaning reads with SGA
+cleaning each PE lib
+
+p1 is /bio/tgallagh/NECphage/data/processed/filteredreads/PA14_NEC_27-49_phage.paired.derep.read1.fastq.fastq
+Cleaning reads
+
+[a5] java -Xmx512m -jar '/data/brew/Cellar/a5/20160825/libexec/bin'/trimmomatic.jar SE -threads 4 -phred33  PA14_NEC_27-49_phage..s1/PA14_NEC_27-49_phage.paired.derep.read1.fastq.fastq.both.fastq PA14_NEC_27-49_phage..s1/PA14_NEC_27-49_phage.paired.derep.read1.fastq.fastq.trim.fastq ILLUMINACLIP:/data/brew/Cellar/a5/20160825/libexec/bin/../adapter.fasta:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+TrimmomaticSE: Started with arguments: -threads 4 -phred33 PA14_NEC_27-49_phage..s1/PA14_NEC_27-49_phage.paired.derep.read1.fastq.fastq.both.fastq PA14_NEC_27-49_phage..s1/PA14_NEC_27-49_phage.paired.derep.read1.fastq.fastq.trim.fastq ILLUMINACLIP:/data/brew/Cellar/a5/20160825/libexec/bin/../adapter.fasta:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
+Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'TCTCGGCATTCCTGCTGAACCGCTCTTCCGATCT'
+Using PrefixPair: 'AGATGTGTATAAGAGACAG' and 'AGATGTGTATAAGAGACAG'
+Using Long Clipping Sequence: 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA'
+Using Long Clipping Sequence: 'CTGTCTCTTATACACATCTCCGAGCCCACGAGAC'
+Using Long Clipping Sequence: 'CTGTCTCTTATACACATCTGACGCTGCCGACGA'
+Using Long Clipping Sequence: 'TCGTCGGCAGCGTCAGATGTGTATAAGAGACAG'
+Using Long Clipping Sequence: 'GCCTCCCTCGCGCCATCAGAGATGTGTATAAGAGACAG'
+Using Long Clipping Sequence: 'GCCTTGCCAGCCCGCTCAGAGATGTGTATAAGAGACAG'
+Using Long Clipping Sequence: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT'
+Using Long Clipping Sequence: 'AGATCGGAAGAGCGGTTCAGCAGGAATGCCGAGA'
+Using Long Clipping Sequence: 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
+Using Long Clipping Sequence: 'TTTTTTTTTTAATGATACGGCGACCACCGAGATCTACAC'
+Using Long Clipping Sequence: 'CTGTCTCTTATACACATCTCTGATGGCGCGAGGGAGGC'
+Using Long Clipping Sequence: 'CTGTCTCTTATACACATCTCTGAGCGGGCTGGCAAGGC'
+Using Long Clipping Sequence: 'AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC'
+Using Long Clipping Sequence: 'TTTTTTTTTTCAAGCAGAAGACGGCATACGA'
+Using Long Clipping Sequence: 'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAG'
+Using Long Clipping Sequence: 'TCTCGGCATTCCTGCTGAACCGCTCTTCCGATCT'
+ILLUMINACLIP: Using 3 prefix pairs, 16 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
+Input Reads: 1953290 Surviving: 1953290 (100.00%) Dropped: 0 (0.00%)
+TrimmomaticSE: Completed successfully
+[a5] '/data/brew/Cellar/a5/20160825/libexec/bin'/sga preprocess -q 25 -f 20 -m 35  --pe-mode=0  PA14_NEC_27-49_phage..s1/PA14_NEC_27-49_phage.paired.derep.read1.fastq.fastq.trim.fastq > PA14_NEC_27-49_phage..s1/PA14_NEC_27-49_phage.paired.derep.read1.fastq.fastq.both.pp 2> /dev/null
+[a5] sga index -d 132355755 -t 4 PA14_NEC_27-49_phage..s1/PA14_NEC_27-49_phage..pp.fastq > PA14_NEC_27-49_phage..s1/index.out 2> PA14_NEC_27-49_phage..s1/index.err
+[a5] '/data/brew/Cellar/a5/20160825/libexec/bin'/sga correct -t 4 -p PA14_NEC_27-49_phage..pp -o PA14_NEC_27-49_phage..s1/PA14_NEC_27-49_phage.paired.derep.read1.fastq.fastq.both.pp.ec.fastq PA14_NEC_27-49_phage..s1/PA14_NEC_27-49_phage.paired.derep.read1.fastq.fastq.both.pp > PA14_NEC_27-49_phage..s1/raw1.correct.out
+[timer - sga::correct] wall clock: 186.26s CPU: 752.84s
+Running cat PA14_NEC_27-49_phage..s1/PA14_NEC_27-49_phage.paired.derep.read1.fastq.fastq.both.repair.fastq >> PA14_NEC_27-49_phage..s1/PA14_NEC_27-49_phage..ec.fastq
+Done merging libraries
+[a5_s2] Building contigs from PA14_NEC_27-49_phage..ec.fastq with IDBA
+[a5] PA14_NEC_27-49_phage..s2/PA14_NEC_27-49_phage..ec.fasta has 101307 bytes of FastA sequence data
+[a5] '/data/brew/Cellar/a5/20160825/libexec/bin'/idba_ud --num_threads 4 -r PA14_NEC_27-49_phage..s2/PA14_NEC_27-49_phage..ec.fasta  -o PA14_NEC_27-49_phage..s2/PA14_NEC_27-49_phage. --mink 35 --maxk 74 --min_pairs 2 
+[a5] bwa index PA14_NEC_27-49_phage..contigs.fasta
+[bwa_index] Pack FASTA... 0.00 sec
+[bwa_index] Construct BWT for the packed sequence...
+[bwa_index] 0.00 seconds elapse.
+[bwa_index] Update BWT... 0.00 sec
+[bwa_index] Pack forward-only FASTA... 0.00 sec
+[bwa_index] Construct SA from BWT and Occ... 0.00 sec
+[main] Version: 0.7.5a-r405
+[main] CMD: /data/brew/Cellar/a5/20160825/libexec/bin/bwa index PA14_NEC_27-49_phage..contigs.fasta
+[main] Real time: 0.047 sec; CPU: 0.008 sec
+[a5] bwa mem -t 4 PA14_NEC_27-49_phage..contigs.fasta /bio/tgallagh/NECphage/data/processed/filteredreads/PA14_NEC_27-49_phage.paired.derep.read1.fastq.fastq /bio/tgallagh/NECphage/data/processed/filteredreads/PA14_NEC_27-49_phage.paired.derep.read2.fastq.fastq 2> /dev/null | '/data/brew/Cellar/a5/20160825/libexec/bin'/samtools view -b -S - | '/data/brew/Cellar/a5/20160825/libexec/bin'/samtools sort - PA14_NEC_27-49_phage..raw1.pe.sort
+[bam_header_read] EOF marker is absent. The input is probably truncated.
+[samopen] SAM header is present: 1 sequences.
+[a5] samtools index PA14_NEC_27-49_phage..raw1.pe.sort.bam
+[mpileup] 1 samples in 1 input files
+Use of uninitialized value $_ in subtraction (-) at /data/brew/opt/a5/bin/a5_pipeline.pl line 938, <VIEW> line 1953294.
+[mpileup] 1 samples in 1 input files
+<mpileup> Set max per-file depth to 8000
+[afs] 0:290.985 1:0.015 2:0.000
+[a5] Done building assembly. Results at PA14_NEC_27-49_phage..contigs.fasta
+[a5] Note, large insert scaffolding skipped (can be enabled with --end=5). Contig and scaffold statistics will be identical.
