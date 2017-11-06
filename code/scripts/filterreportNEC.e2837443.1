@@ -1,0 +1,75 @@
+
+Use fullpaths for trimmomatic. Example usage:
+java -jar /data/apps/trimmomatic/0.35/trimmomatic-0.35.jar ...
+
+where ... are the other options you pass in to trimmomatic. More information
+on the website: http://www.usadellab.org/cms/?page=trimmomatic
+
+TrimmomaticPE: Started with arguments:
+ -phred33 PA14_NEC_11-29_phage.read1.fastq PA14_NEC_11-29_phage.read2.fastq /bio/tgallagh/NECphage/data/processed/filteredreads/PA14_NEC_11-29_phage.paired.read1.fastq /bio/tgallagh/NECphage/data/processed/filteredreads/PA14_NEC_11-29_phage.unpaired.read1.fastq /bio/tgallagh/NECphage/data/processed/filteredreads/PA14_NEC_11-29_phage.paired.read2.fastq /bio/tgallagh/NECphage/data/processed/filteredreads/PA14_NEC_11-29_phage.unpaired.read2.fastq ILLUMINACLIP:/bio/tgallagh/alladaptors.fa:2:30:10 LEADING:25 TRAILING:25 SLIDINGWINDOW:4:20 MINLEN:50
+Using PrefixPair: 'AGATGTGTATAAGAGACAG' and 'AGATGTGTATAAGAGACAG'
+Using Long Clipping Sequence: 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT>TruSeq3_IndexedAdapterAGATCGGAAGAGCACACGTCTGAACTCCAGTCAC'
+Using Long Clipping Sequence: 'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAG'
+Using Long Clipping Sequence: 'TTTTTTTTTTAATGATACGGCGACCACCGAGATCTACAC'
+Using Long Clipping Sequence: 'TCGTCGGCAGCGTCAGATGTGTATAAGAGACAG'
+Using Long Clipping Sequence: 'TTTTTTTTTTCAAGCAGAAGACGGCATACGA>TruSeq2_SEAGATCGGAAGAGCTCGTATGCCGTCTTCTGCTTG'
+Using Long Clipping Sequence: 'CTGTCTCTTATACACATCTGACGCTGCCGACGA'
+Using Long Clipping Sequence: 'AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC>PrefixPE/1TACACTCTTTCCCTACACGACGCTCTTCCGATCT'
+Using Long Clipping Sequence: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT'
+Using Long Clipping Sequence: 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
+Using Long Clipping Sequence: 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA'
+Using Long Clipping Sequence: 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATT'
+Using Long Clipping Sequence: 'AGATCGGAAGAGCGGTTCAGCAGGAATGCCGAG>PrefixPE/1TACACTCTTTCCCTACACGACGCTCTTCCGATCT'
+Using Long Clipping Sequence: 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT'
+Using Long Clipping Sequence: 'AGATCGGAAGAGCGGTTCAGCAGGAATGCCGAGACCGATCTCGTATGCCGTCTTCTGCTTG'
+Using Long Clipping Sequence: 'CAAGCAGAAGACGGCATACGAGATCGGTCTCGGCATTCCTGCTGAACCGCTCTTCCGATCT'
+Skipping duplicate Clipping Sequence: 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA'
+Using Long Clipping Sequence: 'CTGTCTCTTATACACATCTCCGAGCCCACGAGAC>PrefixPE/1AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT'
+Using Long Clipping Sequence: 'AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT'
+ILLUMINACLIP: Using 1 prefix pairs, 16 forward/reverse sequences, 0 forward only sequences, 1 reverse only sequences
+Input Read Pairs: 2915431 Both Surviving: 2001470 (68.65%) Forward Only Surviving: 305426 (10.48%) Reverse Only Surviving: 132938 (4.56%) Dropped: 475597 (16.31%)
+TrimmomaticPE: Completed successfully
+Input and filter stats:
+	Input sequences: 2,001,470
+	Input bases: 143,078,615
+	Input mean length: 71.49
+	Good sequences: 1,050,417 (52.48%)
+	Good bases: 73,431,924
+	Good mean length: 69.91
+	Bad sequences: 951,053 (47.52%)
+	Bad bases: 69,646,691
+	Bad mean length: 73.23
+	Sequences filtered by specified parameters:
+	derep: 951053
+Input and filter stats:
+	Input sequences: 2,001,470
+	Input bases: 142,449,516
+	Input mean length: 71.17
+	Good sequences: 1,075,486 (53.73%)
+	Good bases: 74,799,606
+	Good mean length: 69.55
+	Bad sequences: 925,984 (46.27%)
+	Bad bases: 67,649,910
+	Bad mean length: 73.06
+	Sequences filtered by specified parameters:
+	derep: 925984
+Input and filter stats:
+	Input sequences: 2,001,470
+	Input bases: 143,078,615
+	Input mean length: 71.49
+	Good sequences: 2,001,470 (100.00%)
+	Good bases: 143,078,615
+	Good mean length: 71.49
+	Bad sequences: 0 (0.00%)
+	Sequences filtered by specified parameters:
+	none
+Input and filter stats:
+	Input sequences: 2,001,470
+	Input bases: 142,449,516
+	Input mean length: 71.17
+	Good sequences: 2,001,470 (100.00%)
+	Good bases: 142,449,516
+	Good mean length: 71.17
+	Bad sequences: 0 (0.00%)
+	Sequences filtered by specified parameters:
+	none
